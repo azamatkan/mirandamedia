@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface ServiceRow {
@@ -88,7 +88,7 @@ function ServiceListSection({
   const hoveredItem = items.find((i) => i.id === hoveredId);
 
   return (
-    <section className="bg-dark-navy py-24 relative overflow-hidden">
+    <section className="bg-white py-24 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -96,10 +96,10 @@ function ServiceListSection({
           viewport={{ once: true }}
           className="mb-16"
         >
-          <span className="block text-sm font-bold text-neon-green uppercase tracking-[0.3em] mb-3">
+          <span className="block text-sm font-bold text-slate-400 uppercase tracking-[0.3em] mb-3">
             {eyebrow}
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900">
             {heading}
           </h2>
         </motion.div>
@@ -110,7 +110,6 @@ function ServiceListSection({
           onMouseMove={handleMouseMove}
           onMouseLeave={() => setHoveredId(null)}
         >
-          {/* Floating hover image — desktop only */}
           <AnimatePresence>
             {hoveredItem && (
               <motion.div
@@ -125,7 +124,7 @@ function ServiceListSection({
                   width: 340,
                 }}
               >
-                <div className="rounded-xl overflow-hidden shadow-2xl shadow-black/40 border border-white/10">
+                <div className="rounded-xl overflow-hidden shadow-2xl shadow-black/20 border border-slate-200">
                   <img
                     src={hoveredItem.image}
                     alt={hoveredItem.title}
@@ -137,8 +136,7 @@ function ServiceListSection({
             )}
           </AnimatePresence>
 
-          {/* Rows */}
-          <div className="border-t border-white/10">
+          <div className="border-t border-slate-200">
             {items.map((item, i) => (
               <motion.div
                 key={item.id}
@@ -148,16 +146,15 @@ function ServiceListSection({
                 transition={{ delay: i * 0.06 }}
                 onMouseEnter={() => setHoveredId(item.id)}
                 className={cn(
-                  'group border-b border-white/10 transition-colors duration-300 cursor-pointer',
-                  hoveredId === item.id ? 'bg-white/[0.04]' : 'bg-transparent',
+                  'group border-b border-slate-200 transition-colors duration-300 cursor-pointer',
+                  hoveredId === item.id ? 'bg-slate-50' : 'bg-transparent',
                 )}
               >
-                {/* Desktop layout */}
                 <div className="hidden md:grid md:grid-cols-[1fr_1.4fr_auto] items-center gap-8 py-7 pr-4">
                   <h3
                     className={cn(
                       'text-2xl lg:text-3xl font-bold transition-colors duration-300',
-                      hoveredId === item.id ? 'text-white' : 'text-slate-300',
+                      hoveredId === item.id ? 'text-slate-900' : 'text-slate-700',
                     )}
                   >
                     {item.title}
@@ -166,9 +163,7 @@ function ServiceListSection({
                   <p
                     className={cn(
                       'text-base leading-relaxed transition-colors duration-300 max-w-lg',
-                      hoveredId === item.id
-                        ? 'text-slate-300'
-                        : 'text-slate-500',
+                      hoveredId === item.id ? 'text-slate-600' : 'text-slate-400',
                     )}
                   >
                     {item.description}
@@ -179,7 +174,7 @@ function ServiceListSection({
                       'w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 flex-shrink-0',
                       hoveredId === item.id
                         ? 'bg-neon-green text-slate-900'
-                        : 'bg-white/10 text-white',
+                        : 'bg-slate-100 text-slate-400',
                     )}
                   >
                     <ArrowUpRight
@@ -192,15 +187,14 @@ function ServiceListSection({
                   </div>
                 </div>
 
-                {/* Mobile layout */}
                 <div className="md:hidden py-6">
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-xl font-bold text-white">{item.title}</h3>
-                    <div className="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center flex-shrink-0">
+                    <h3 className="text-xl font-bold text-slate-900">{item.title}</h3>
+                    <div className="w-10 h-10 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center flex-shrink-0">
                       <ArrowUpRight size={16} />
                     </div>
                   </div>
-                  <p className="text-sm text-slate-400 leading-relaxed mb-4">
+                  <p className="text-sm text-slate-500 leading-relaxed mb-4">
                     {item.description}
                   </p>
                   <div className="rounded-lg overflow-hidden">
@@ -249,7 +243,7 @@ export default function ServicesToProducts() {
         ctaLabel="Všechny služby"
       />
 
-      <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
       <ServiceListSection
         eyebrow="Naše produkty"

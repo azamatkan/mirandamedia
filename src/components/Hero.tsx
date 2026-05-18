@@ -1,20 +1,11 @@
-import { useState, useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform } from 'motion/react';
+import { useState, useEffect } from 'react';
+import { motion } from 'motion/react';
 import { Sparkles, ArrowUpRight } from 'lucide-react';
 import CaseStudySlider, { caseStudies } from './CaseStudySlider';
 
 export default function Hero() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [hoveredImage, setHoveredImage] = useState<string | null>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  });
-
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.75]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.3]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -32,10 +23,9 @@ export default function Hero() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative h-[150vh] md:h-[200vh]">
-      <motion.section
-        style={{ scale }}
-        className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#05070A] origin-top will-change-transform z-0 pt-16 md:pt-20"
+    <div className="relative">
+      <section
+        className="h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#05070A] pt-16 md:pt-20"
       >
         {/* Background Video */}
         <div className="absolute inset-0 z-0 overflow-hidden">
@@ -93,7 +83,7 @@ export default function Hero() {
         <div className="absolute bottom-[10%] right-[10%] w-[60%] h-[60%] bg-[#59DC8E]/5 blur-[150px] rounded-full pointer-events-none" />
 
         <div className="max-w-6xl mx-auto px-6 w-full relative z-10 text-center">
-          <motion.div style={{ opacity }}>
+          <div>
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -139,13 +129,13 @@ export default function Hero() {
                 <ArrowUpRight size={20} className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
               </motion.button>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
 
-        <motion.div style={{ opacity }} className="w-full relative z-10 mt-12">
+        <div className="w-full relative z-10 mt-12">
           <CaseStudySlider onHoverImage={setHoveredImage} />
-        </motion.div>
-      </motion.section>
+        </div>
+      </section>
     </div>
   );
 }
