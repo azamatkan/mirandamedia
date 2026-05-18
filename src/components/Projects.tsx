@@ -40,6 +40,14 @@ const projects: ProjectItem[] = [
     result: 'E-commerce Launch',
     imageSrc: 'https://i.imgur.com/Xx0Kjt1.jpeg',
   },
+  {
+    id: 'florbalexpert',
+    title: 'Florbalexpert',
+    duration: '2024 – současnost',
+    description: 'Kompletní redesign a migrace e-shopu pro největšího prodejce florbalového vybavení v ČR.',
+    result: 'E-shop Redesign',
+    imageSrc: '/case-studies/florbalexpert/image101.png',
+  },
 ];
 
 export default function Projects() {
