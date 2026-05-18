@@ -2,7 +2,7 @@ import Hero from '../components/Hero';
 import ProofBar from '../components/ProofBar';
 import ServicesToProducts from '../components/ServicesToProducts';
 import Projects from '../components/Projects';
-import AIProducts from '../components/AIProducts';
+
 import Team from '../components/Team';
 import { StaggerTestimonials } from '../components/ui/stagger-testimonials';
 import Contact from '../components/Contact';
@@ -25,10 +25,6 @@ export default function Home() {
 
           <div id="projects">
             <Projects />
-          </div>
-
-          <div id="aiproducts">
-            <AIProducts />
           </div>
 
           <div id="team"><Team /></div>
