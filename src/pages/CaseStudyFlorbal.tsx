@@ -112,12 +112,14 @@ export default function CaseStudyFlorbal() {
             }
           >
             <video
-              src="https://mepstzvtcaxmntkiirrd.supabase.co/storage/v1/object/public/Videos/Case_study_scroll.mp4"
-              className="mx-auto rounded-2xl object-cover h-full object-top w-full"
+              src="/case-studies/florbalexpert/scroll.mp4"
+              className="mx-auto rounded-2xl object-cover h-full w-full"
+              style={{ background: '#111' }}
               autoPlay
               loop
               muted
               playsInline
+              preload="metadata"
             />
           </ContainerScroll>
         </div>
@@ -130,11 +132,10 @@ export default function CaseStudyFlorbal() {
             {/* Left Column: Info */}
             <div className="space-y-12">
               <div className="relative">
-                <img 
-                  src="https://mepstzvtcaxmntkiirrd.supabase.co/storage/v1/object/public/Photos/1.png" 
-                  alt="01" 
+                <img
+                  src="/case-studies/florbalexpert/1.png"
+                  alt="01"
                   className="w-48 h-auto mb-12"
-                  referrerPolicy="no-referrer"
                 />
                 <h2 className="text-4xl lg:text-6xl font-bold text-white tracking-tighter mb-12 whitespace-nowrap">
                   Představení klienta
@@ -156,11 +157,10 @@ export default function CaseStudyFlorbal() {
             {/* Right Column: Image & Stats */}
             <div className="space-y-24">
               <div className="relative overflow-hidden aspect-[4/3] group shadow-[0_0_50px_rgba(0,0,0,0.3)]">
-                <img 
-                  src="https://mepstzvtcaxmntkiirrd.supabase.co/storage/v1/object/public/Photos/image101.png" 
-                  alt="Florbalexpert" 
+                <img
+                  src="/case-studies/florbalexpert/image101.png"
+                  alt="Florbalexpert"
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                  referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-black/10" />
               </div>
@@ -174,7 +174,7 @@ export default function CaseStudyFlorbal() {
                 ].map((stat, i) => (
                   <div key={i} className="space-y-6">
                     <span className="block text-4xl md:text-5xl font-bold text-white tracking-tighter">{stat.val}</span>
-                    <span className="text-sm font-bold text-slate-500 uppercase tracking-[0.3em]">{stat.label}</span>
+                    <span className="text-sm font-bold text-slate-500 tracking-[0.3em]">{stat.label}</span>
                   </div>
                 ))}
               </div>
@@ -185,7 +185,7 @@ export default function CaseStudyFlorbal() {
 
       <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-20 relative mt-40">
         {/* Sticky Sidebar Navigation */}
-        <aside className="lg:w-80 flex-shrink-0 hidden lg:block">
+        <aside className="lg:w-80 flex-shrink-0 hidden lg:block self-start">
           <div className="sticky top-32 space-y-10">
             <div>
               <h3 className="text-2xl font-bold text-white mb-10 leading-tight">
@@ -262,11 +262,10 @@ export default function CaseStudyFlorbal() {
           <section id="design" className="scroll-mt-32 relative overflow-hidden">
             <div className="space-y-32">
               <div className="relative">
-                <img 
-                  src="https://mepstzvtcaxmntkiirrd.supabase.co/storage/v1/object/public/Photos/2.png" 
-                  alt="02" 
+                <img
+                  src="/case-studies/florbalexpert/2.png"
+                  alt="02"
                   className="w-48 h-auto mb-12"
-                  referrerPolicy="no-referrer"
                 />
                 <h2 className="text-4xl lg:text-7xl font-bold text-white tracking-tighter mb-12">
                   Realizace projektu
@@ -284,11 +283,10 @@ export default function CaseStudyFlorbal() {
                 
                 <div className="relative pt-20 flex justify-center">
                   <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-64 bg-neon-green/10 blur-[100px] rounded-full opacity-50" />
-                  <img 
-                    src="https://mepstzvtcaxmntkiirrd.supabase.co/storage/v1/object/public/Photos/Banner.png" 
-                    alt="Design Mockup MacBook" 
+                  <img
+                    src="/case-studies/florbalexpert/Banner.png"
+                    alt="Grafický design mockup"
                     className="relative z-10 w-full max-w-5xl h-auto drop-shadow-2xl"
-                    referrerPolicy="no-referrer"
                   />
                 </div>
               </div>
@@ -304,11 +302,10 @@ export default function CaseStudyFlorbal() {
                 
                 <div className="relative pt-20 flex justify-center">
                   <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-64 bg-neon-green/20 blur-[100px] rounded-full opacity-50" />
-                  <img 
-                    src="https://mepstzvtcaxmntkiirrd.supabase.co/storage/v1/object/public/Photos/MacBook16.png" 
-                    alt="Data Migration MacBook" 
+                  <img
+                    src="/case-studies/florbalexpert/MacBook16.png"
+                    alt="Migrace dat mockup"
                     className="relative z-10 w-full max-w-5xl h-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)]"
-                    referrerPolicy="no-referrer"
                   />
                 </div>
               </div>
@@ -323,17 +320,15 @@ export default function CaseStudyFlorbal() {
                 </div>
                 
                 <div className="space-y-8">
-                  <img 
-                    src="https://mepstzvtcaxmntkiirrd.supabase.co/storage/v1/object/public/Photos/image2.png" 
-                    alt="Shoptet Admin 01" 
+                  <img
+                    src="/case-studies/florbalexpert/image2.png"
+                    alt="Shoptet administrace"
                     className="w-full h-auto"
-                    referrerPolicy="no-referrer"
                   />
-                  <img 
-                    src="https://mepstzvtcaxmntkiirrd.supabase.co/storage/v1/object/public/Photos/image3.png" 
-                    alt="Shoptet Admin 02" 
+                  <img
+                    src="/case-studies/florbalexpert/image3.png"
+                    alt="Shoptet doplňky"
                     className="w-full h-auto"
-                    referrerPolicy="no-referrer"
                   />
                 </div>
               </div>
