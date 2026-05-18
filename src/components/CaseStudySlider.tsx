@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
 
-const caseStudies = [
+export const caseStudies = [
   {
     id: 1,
     client: "Pet Center",
@@ -94,7 +94,11 @@ const caseStudies = [
   }
 ];
 
-export default function CaseStudySlider() {
+interface CaseStudySliderProps {
+  onHoverImage?: (image: string | null) => void;
+}
+
+export default function CaseStudySlider({ onHoverImage }: CaseStudySliderProps) {
   return (
     <div className="w-full overflow-x-auto no-scrollbar py-4 relative h-[220px] flex items-center justify-center">
       <div className="flex gap-2 items-center justify-start px-8 h-full overflow-x-auto">
@@ -104,22 +108,24 @@ export default function CaseStudySlider() {
             className="relative flex-shrink-0 cursor-pointer group"
             initial={{ width: 140, height: 140 }}
             animate={{ width: 140, height: 140 }}
-            whileHover={{ 
-              width: 320, 
-              height: 180, 
+            whileHover={{
+              width: 320,
+              height: 180,
               zIndex: 50,
               transition: { duration: 0.3, ease: "easeOut" }
             }}
             transition={{ duration: 0.3 }}
+            onMouseEnter={() => onHoverImage?.(study.image)}
+            onMouseLeave={() => onHoverImage?.(null)}
           >
             <div className="w-full h-full rounded-none overflow-hidden relative shadow-2xl">
-              <img 
-                src={study.image} 
+              <img
+                src={study.image}
                 alt={study.client}
                 className="w-full h-full object-cover transition-all duration-300 grayscale group-hover:grayscale-0"
                 referrerPolicy="no-referrer"
               />
-              
+
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-4 text-left">
                 <div className="flex justify-between items-start">
